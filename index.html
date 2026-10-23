@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ToolroomOS: the operating system for your toolroom</title>
+  <meta name="description" content="ToolroomOS connects every stage of a toolroom job on one platform, from the first enquiry to the last delivery. One sign-in, one live record per job, and new modules as your shop grows." />
+  <meta name="theme-color" content="#054b7a" />
+  <link rel="canonical" href="https://toolroomos.com/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ToolroomOS: the operating system for your toolroom" />
+  <meta property="og:description" content="Every stage of a toolroom job on one connected platform." />
+  <meta property="og:url" content="https://toolroomos.com/" />
+  <meta property="og:image" content="https://toolroomos.com/assets/og.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script src="/assets/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ───────────── Header ───────────── -->
+  <header class="nav" id="nav">
+    <div class="wrap nav__in">
+      <a class="brand" href="#top" aria-label="ToolroomOS home">
+        <img src="/assets/logo.svg" alt="" width="34" height="34" />
+        <span>Toolroom<b>OS</b></span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Main">
+        <a href="#flow">How it works</a>
+        <a href="#modules">Modules</a>
+        <a href="#shopfloor">Shop floor</a>
+        <a href="#why">Why ToolroomOS</a>
+        <a href="#contact" class="btn btn--ghost nav__cta-mobile">Book a demo</a>
+      </nav>
+      <div class="nav__actions">
+        <a class="btn btn--ghost" href="https://home.udayprecisionsolutions.com" data-signin>Sign in</a>
+        <a class="btn btn--primary" href="#contact">Book a demo</a>
+        <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ───────────── Hero ───────────── -->
+    <section class="hero" id="top">
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <div class="wrap hero__in">
+        <div class="hero__copy reveal">
+          <p class="eyebrow"><span class="dot"></span> For mould, die, mouldbase &amp; precision toolrooms</p>
+          <h1>The operating system for your <span class="ink">toolroom</span>.</h1>
+          <p class="lead">Most toolrooms still run on spreadsheets, WhatsApp and paper. Quotes take days, dimensions get re-typed, parts go missing between vendors and nobody can say when a job will really ship. ToolroomOS gives every job a single, live record, from the first enquiry to the last delivery.</p>
+          <div class="hero__ctas">
+            <a class="btn btn--primary btn--lg" href="#contact">Book a demo</a>
+            <a class="btn btn--ghost btn--lg" href="#flow">See a job flow <span aria-hidden="true">→</span></a>
+          </div>
+          <ul class="hero__chips" aria-label="Highlights">
+            <li>One sign-in for every app</li>
+            <li>Multi-company</li>
+            <li>GST-ready challans</li>
+          </ul>
+        </div>
+
+        <!-- Animated mould: plates open, ejector pins push the part out, the part rides to the next station -->
+        <div class="hero__art reveal" aria-hidden="true">
+          <svg class="mould" viewBox="0 0 520 470" role="presentation">
+            <defs>
+              <linearGradient id="gPlate" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#0b5d96" />
+                <stop offset="1" stop-color="#054b7a" />
+              </linearGradient>
+              <linearGradient id="gSteel" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#e8eef5" />
+                <stop offset="1" stop-color="#b9c8d8" />
+              </linearGradient>
+              <linearGradient id="gPart" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#fbbf24" />
+                <stop offset="1" stop-color="#ea580c" />
+              </linearGradient>
+              <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#054b7a" flood-opacity=".22" />
+              </filter>
+            </defs>
+
+            <!-- orbit of stations -->
+            <g class="orbit">
+              <circle cx="260" cy="235" r="215" class="orbit__ring" />
+              <circle cx="260" cy="235" r="215" class="orbit__dash" />
+            </g>
+
+            <g filter="url(#soft)">
+              <!-- fixed half -->
+              <g class="m-fixed">
+                <rect x="120" y="70" width="280" height="34" rx="8" fill="url(#gPlate)" />
+                <rect x="140" y="104" width="240" height="56" rx="6" fill="url(#gSteel)" />
+                <rect x="232" y="104" width="56" height="10" rx="3" fill="#9fb3c8" />
+                <circle cx="260" cy="87" r="9" fill="#f59e0b" />
+              </g>
+
+              <!-- guide pillars (fixed to the moving half) -->
+              <g class="m-moving">
+                <rect x="152" y="120" width="12" height="150" rx="6" fill="#cfdae6" />
+                <rect x="356" y="120" width="12" height="150" rx="6" fill="#cfdae6" />
+                <rect x="140" y="170" width="240" height="56" rx="6" fill="url(#gSteel)" />
+                <rect x="226" y="160" width="68" height="18" rx="5" fill="#a8bbcf" />
+                <rect x="120" y="226" width="280" height="22" rx="6" fill="url(#gPlate)" />
+                <rect x="150" y="248" width="40" height="70" rx="4" fill="#0b5d96" opacity=".9" />
+                <rect x="330" y="248" width="40" height="70" rx="4" fill="#0b5d96" opacity=".9" />
+                <!-- ejector plate + pins -->
+                <g class="m-ejector">
+                  <rect x="196" y="282" width="128" height="18" rx="4" fill="#7c93ab" />
+                  <rect x="226" y="196" width="8" height="88" rx="3" fill="#94a9be" />
+                  <rect x="256" y="196" width="8" height="88" rx="3" fill="#94a9be" />
+                  <rect x="286" y="196" width="8" height="88" rx="3" fill="#94a9be" />
+                </g>
+                <rect x="120" y="318" width="280" height="26" rx="8" fill="url(#gPlate)" />
+              </g>
+
+              <!-- the part -->
+              <g class="m-part">
+                <rect x="230" y="150" width="60" height="26" rx="7" fill="url(#gPart)" />
+                <rect x="244" y="138" width="32" height="14" rx="5" fill="url(#gPart)" />
+              </g>
+            </g>
+
+            <!-- conveyor -->
+            <g class="conveyor">
+              <rect x="300" y="404" width="200" height="12" rx="6" fill="#dbe4ee" />
+              <g class="conveyor__dots">
+                <circle cx="312" cy="410" r="2.5" /><circle cx="336" cy="410" r="2.5" /><circle cx="360" cy="410" r="2.5" />
+                <circle cx="384" cy="410" r="2.5" /><circle cx="408" cy="410" r="2.5" /><circle cx="432" cy="410" r="2.5" />
+                <circle cx="456" cy="410" r="2.5" /><circle cx="480" cy="410" r="2.5" />
+              </g>
+            </g>
+          </svg>
+
+          <!-- station badges riding the orbit -->
+          <div class="badges">
+            <span class="badge b1"><i class="ic ic--enquiry"></i>Enquiry</span>
+            <span class="badge b2"><i class="ic ic--design"></i>Design</span>
+            <span class="badge b3"><i class="ic ic--purchase"></i>Purchase</span>
+            <span class="badge b4"><i class="ic ic--production"></i>Production</span>
+            <span class="badge b5"><i class="ic ic--dispatch"></i>Dispatch</span>
+          </div>
+          <div class="hero__tag">
+            <span class="pulse"></span>
+            <div class="hero__tag-text" id="heroTag"><b>Enquiry · ENQ-1042</b><small>41 parts read from assembly.step</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── Ticker ───────────── -->
+    <section class="ticker" aria-label="What ToolroomOS handles">
+      <div class="ticker__track">
+        <span>STEP import</span><span>Auto BOM</span><span>Quotations</span><span>Item codes</span><span>3D review with dimensions</span>
+        <span>Stock sizing</span><span>Purchase orders</span><span>Receipts</span><span>Category planning</span><span>Machine load</span>
+        <span>Outsourcing</span><span>Pickup requests</span><span>GST delivery challans</span><span>Vendor tracking</span><span>Single sign-on</span>
+        <span aria-hidden="true">STEP import</span><span aria-hidden="true">Auto BOM</span><span aria-hidden="true">Quotations</span><span aria-hidden="true">Item codes</span><span aria-hidden="true">3D review with dimensions</span>
+        <span aria-hidden="true">Stock sizing</span><span aria-hidden="true">Purchase orders</span><span aria-hidden="true">Receipts</span><span aria-hidden="true">Category planning</span><span aria-hidden="true">Machine load</span>
+        <span aria-hidden="true">Outsourcing</span><span aria-hidden="true">Pickup requests</span><span aria-hidden="true">GST delivery challans</span><span aria-hidden="true">Vendor tracking</span><span aria-hidden="true">Single sign-on</span>
+      </div>
+    </section>
+
+    <!-- ───────────── Problem ───────────── -->
+    <section class="section problem" id="why">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="eyebrow">The toolroom today</p>
+          <h2>Every job has dozens of parts. Each one is tracked somewhere different.</h2>
+          <p class="lead">Quotes in one file, BOMs in another, orders in email, the plan on a whiteboard and paperwork in a template. Someone always asks the same question: <em>where is that part now?</em></p>
+        </div>
+        <div class="problem__grid">
+          <article class="pcard reveal">
+            <div class="pcard__before"><span class="x">✕</span> Re-typing dimensions from the model into Excel</div>
+            <div class="pcard__after"><span class="ok">✓</span> Dimensions read straight from the STEP file and shown on the 3D box</div>
+          </article>
+          <article class="pcard reveal">
+            <div class="pcard__before"><span class="x">✕</span> Calling vendors to find out what came back</div>
+            <div class="pcard__after"><span class="ok">✓</span> Every part's received and completed date, by vendor and machine</div>
+          </article>
+          <article class="pcard reveal">
+            <div class="pcard__before"><span class="x">✕</span> Challans written by hand, numbers clashing</div>
+            <div class="pcard__after"><span class="ok">✓</span> GST-format challans, numbered per financial year, never duplicated</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── Flow (sticky story) ───────────── -->
+    <section class="section flow" id="flow">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="eyebrow">How it works</p>
+          <h2>One job. One thread. Every station.</h2>
+          <p class="lead">Follow a single order through today’s core modules. Each step picks up exactly where the last one stopped, and every new module joins the same thread.</p>
+        </div>
+
+        <div class="flow__grid">
+          <ol class="flow__steps">
+            <li class="step" data-step="0">
+              <span class="step__no">01</span>
+              <h3>Enquiry</h3>
+              <p>Drop in the customer's STEP file. ToolroomOS reads every part, works out sizes and shapes, builds the bill of materials and prepares the quotation. Save it as a PDF named after the quote ref.</p>
+            </li>
+            <li class="step" data-step="1">
+              <span class="step__no">02</span>
+              <h3>Design</h3>
+              <p>Sort parts into your categories, assign materials and item codes, and review each one in 3D with its actual and stock dimensions drawn on the box. Changes save as you go.</p>
+            </li>
+            <li class="step" data-step="2">
+              <span class="step__no">03</span>
+              <h3>Purchase</h3>
+              <p>Stock sizes become purchase orders by vendor. Receipts are booked against each line, so production knows exactly what material is in the building.</p>
+            </li>
+            <li class="step" data-step="3">
+              <span class="step__no">04</span>
+              <h3>Production</h3>
+              <p>Plan every operation, in-house machine or outside vendor, on a board or a table. Each team finishes its own category, and machine load is shown as you pick.</p>
+            </li>
+            <li class="step" data-step="4">
+              <span class="step__no">05</span>
+              <h3>Dispatch</h3>
+              <p>Raise GST-format delivery challans and pickup requests with addresses, HSN and value, then track each part at every vendor until it comes back complete.</p>
+            </li>
+          </ol>
+
+          <div class="flow__stage" aria-hidden="true">
+            <div class="stage">
+              <div class="stage__rail"><span class="stage__fill"></span>
+                <i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i>
+              </div>
+
+              <!-- 01 Enquiry -->
+              <div class="screen s0">
+                <div class="screen__bar"><b>Enquiry</b><span>New enquiry · ENQ-1042</span></div>
+                <div class="drop"><div class="drop__file">assembly.step</div><div class="drop__label">Reading 41 parts…</div><div class="drop__bar"><span></span></div></div>
+                <table class="mini">
+                  <tr><th>Part</th><th>Shape</th><th>Size (mm)</th></tr>
+                  <tr class="r"><td>Core plate</td><td>Flat</td><td>450 × 340 × 60</td></tr>
+                  <tr class="r"><td>Guide pillar</td><td>Round</td><td>Ø 32 × 180</td></tr>
+                  <tr class="r"><td>Pressure pad</td><td>Flat</td><td>220 × 90 × 40</td></tr>
+                </table>
+                <div class="quote"><span>Quotation QT/26-27/118</span><b>Ready</b></div>
+              </div>
+
+              <!-- 02 Design -->
+              <div class="screen s1">
+                <div class="screen__bar"><b>Design</b><span>Review · Core plate</span></div>
+                <div class="cube-wrap">
+                  <div class="cube">
+                    <div class="f f1"></div><div class="f f2"></div><div class="f f3"></div>
+                    <div class="f f4"></div><div class="f f5"></div><div class="f f6"></div>
+                  </div>
+                  <span class="dim d1">450</span><span class="dim d2">340</span><span class="dim d3">205</span>
+                  <span class="dim p1">460</span><span class="dim p2">350</span>
+                </div>
+                <div class="fields">
+                  <div><small>Item code</small><b>CP-101</b></div>
+                  <div><small>Material</small><b>EN31</b></div>
+                  <div class="saved">All changes saved</div>
+                </div>
+              </div>
+
+              <!-- 03 Purchase -->
+              <div class="screen s2">
+                <div class="screen__bar"><b>Purchase</b><span>PO-2207 · Apex Steels</span></div>
+                <ul class="po">
+                  <li><span class="tick"></span>Flats · EN31 · 460 × 350 × 65</li>
+                  <li><span class="tick"></span>Rounds · EN8 · Ø 40 × 190</li>
+                  <li><span class="tick"></span>Flats · P20 · 230 × 100 × 45</li>
+                  <li><span class="tick"></span>Rounds · EN353 · Ø 25 × 120</li>
+                </ul>
+                <div class="po__foot"><span>Received</span><div class="meter"><span></span></div></div>
+              </div>
+
+              <!-- 04 Production -->
+              <div class="screen s3">
+                <div class="screen__bar"><b>Production</b><span>Plan · Rounds</span></div>
+                <div class="kanban">
+                  <div class="col"><small>To assign</small><div class="card k1">GP-204</div><div class="card k2">EP-310</div><div class="card card--idle">SP-118</div><div class="card card--idle">CV-102</div></div>
+                  <div class="col"><small>Turning</small><div class="slot"></div><div class="pill">CNC Lathe 1 · 14 queued</div></div>
+                  <div class="col"><small>Heat treat</small><div class="slot"></div><div class="pill pill--v">Nova Heat Treat · vendor</div></div>
+                </div>
+                <div class="screen__foot"><span class="ok-dot"></span>All changes saved<b class="cta">Complete Rounds</b></div>
+              </div>
+
+              <!-- 05 Dispatch -->
+              <div class="screen s4">
+                <div class="screen__bar"><b>Dispatch</b><span>Delivery challan</span></div>
+                <div class="dc">
+                  <div class="dc__head"><b>DELIVERY CHALLAN</b><small>ORIGINAL FOR CONSIGNEE</small></div>
+                  <div class="dc__row"><span>DC No</span><b>DC/26-27/0004</b><span>Vehicle</span><b>TS09AB1234</b></div>
+                  <div class="dc__row"><span>HSN</span><b>8480</b><span>Value</span><b>Rs 75,000</b></div>
+                  <div class="dc__note">Goods sent for job work under Sec. 143, not a sale.</div>
+                </div>
+                <div class="pr"><b>PR-0005</b><span>Orbit Engineering</span><i>→</i><span>Nova Heat Treat</span></div>
+                <ul class="track">
+                  <li><i></i>GP-204 · Heat treatment<em>Received 23 Oct</em></li>
+                  <li><i></i>EP-310 · Heat treatment<em>Received 23 Oct</em></li>
+                  <li><i class="wait"></i>SP-118 · Heat treatment<em>In transit</em></li>
+                </ul>
+                <div class="road"><div class="truck"><span></span></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── Modules ───────────── -->
+    <section class="section modules" id="modules">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="eyebrow">Modules</p>
+          <h2>Use one app, or the whole toolroom.</h2>
+          <p class="lead">Each module stands on its own and shares the same parts, people and sign-in with the rest. New modules plug into the same platform as your shop grows.</p>
+        </div>
+        <div class="mgrid">
+          <article class="mcard reveal" style="--d:0">
+            <div class="mcard__ic"><i class="ic ic--enquiry"></i></div>
+            <h3>Enquiry</h3>
+            <p>STEP files in, bill of materials and quotation out.</p>
+            <ul><li>Reads assemblies, sizes every part</li><li>Flat, round and casting detection</li><li>Quotes as PDF, named by ref</li></ul>
+          </article>
+          <article class="mcard reveal" style="--d:1">
+            <div class="mcard__ic"><i class="ic ic--design"></i></div>
+            <h3>Design</h3>
+            <p>Categorise, materialise and review in 3D.</p>
+            <ul><li>Item code master with search</li><li>Actual and stock boxes with dimensions</li><li>Auto-save on every change</li></ul>
+          </article>
+          <article class="mcard reveal" style="--d:2">
+            <div class="mcard__ic"><i class="ic ic--purchase"></i></div>
+            <h3>Purchase</h3>
+            <p>Stock sizes become orders, orders become receipts.</p>
+            <ul><li>POs grouped by vendor</li><li>Receipts against each line</li><li>Material ready for production</li></ul>
+          </article>
+          <article class="mcard reveal" style="--d:3">
+            <div class="mcard__ic"><i class="ic ic--production"></i></div>
+            <h3>Production</h3>
+            <p>Plan, track and dispatch every operation.</p>
+            <ul><li>Board and table planning</li><li>Machine load while you pick</li><li>Vendor and machine tracking</li></ul>
+          </article>
+          <article class="mcard reveal" style="--d:4">
+            <div class="mcard__ic"><i class="ic ic--dispatch"></i></div>
+            <h3>Dispatch</h3>
+            <p>Paperwork that is right the first time.</p>
+            <ul><li>GST Rule 55 delivery challans</li><li>Pickup requests with addresses</li><li>No duplicate challans</li></ul>
+          </article>
+          <article class="mcard mcard--hub reveal" style="--d:5">
+            <div class="mcard__ic"><i class="ic ic--hub"></i></div>
+            <h3>Hub</h3>
+            <p>One home for people, companies and apps.</p>
+            <ul><li>Single sign-on across apps</li><li>Invites, roles and app access</li><li>Run several companies</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── Shop floor highlights ───────────── -->
+    <section class="section floor" id="shopfloor">
+      <div class="wrap floor__in">
+        <div class="floor__copy reveal">
+          <p class="eyebrow eyebrow--light">Built on the shop floor</p>
+          <h2>Made by toolroom people, for toolroom people.</h2>
+          <p class="lead">ToolroomOS grew inside a working toolroom. Every screen answers a question somebody on the floor actually asked.</p>
+          <ul class="checks">
+            <li><b>Skip what you don't need.</b> Operations a part doesn't need are skipped, and tracking still follows it correctly.</li>
+            <li><b>Each team owns its category.</b> Rounds, flats and castings are released on their own.</li>
+            <li><b>Every number in one place.</b> Item codes, HSN, challan numbers and vehicle numbers are set once in settings.</li>
+            <li><b>Rs 50,000 rule built in.</b> The vehicle number is required automatically when a challan crosses the e-way bill limit.</li>
+          </ul>
+        </div>
+        <div class="floor__art reveal" aria-hidden="true">
+          <div class="gauge">
+            <svg viewBox="0 0 200 120">
+              <path d="M20 110 A80 80 0 0 1 180 110" class="gauge__track" />
+              <path d="M20 110 A80 80 0 0 1 180 110" class="gauge__val" />
+            </svg>
+            <div class="gauge__label"><b>On time</b><small>parts released this week</small></div>
+          </div>
+          <div class="stack">
+            <div class="srow"><span>CNC Lathe 1</span><div class="bar"><i style="--w:78%"></i></div><em>14</em></div>
+            <div class="srow"><span>VMC-02</span><div class="bar"><i style="--w:42%"></i></div><em>4</em></div>
+            <div class="srow"><span>Surface Grinder</span><div class="bar"><i style="--w:30%"></i></div><em>3</em></div>
+            <div class="srow"><span>Nova Heat Treat</span><div class="bar bar--v"><i style="--w:60%"></i></div><em>8</em></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── Trust / pillars ───────────── -->
+    <section class="section pillars">
+      <div class="wrap">
+        <div class="pgrid">
+          <div class="pillar reveal"><span class="pillar__n">1</span><h3>Sign in once</h3><p>One account opens every app you are allowed to use.</p></div>
+          <div class="pillar reveal"><span class="pillar__n">2</span><h3>Separate companies</h3><p>Run more than one company with its own data, settings and team.</p></div>
+          <div class="pillar reveal"><span class="pillar__n">3</span><h3>Nothing is lost</h3><p>Plans and reviews save as you work, with clear "All changes saved" status.</p></div>
+          <div class="pillar reveal"><span class="pillar__n">4</span><h3>Desktop and web</h3><p>Work in the browser, with desktop apps where the job needs them.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── CTA / contact ───────────── -->
+    <section class="section cta" id="contact">
+      <div class="wrap">
+        <div class="cta__box reveal">
+          <div>
+            <h2>See your own toolroom in ToolroomOS.</h2>
+            <p>Bring one real job, a STEP file or a recent order, and we'll walk it from enquiry to dispatch with you.</p>
+          </div>
+          <div class="cta__actions">
+            <a class="btn btn--light btn--lg" href="mailto:hello@toolroomos.com?subject=ToolroomOS%20demo" data-contact>Book a demo</a>
+            <a class="btn btn--outline-light btn--lg" href="https://home.udayprecisionsolutions.com" data-signin>Sign in</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__in">
+      <div class="brand brand--foot"><img src="/assets/logo.svg" alt="" width="28" height="28" /><span>Toolroom<b>OS</b></span></div>
+      <p>The operating system for mould, die, mouldbase and precision toolrooms.</p>
+      <p class="footer__small">© <span id="year">2026</span> Uday Precision Solutions · Hyderabad, India</p>
+    </div>
+  </footer>
+</body>
+</html>

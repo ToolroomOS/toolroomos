@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#054b7a"/><stop offset="1" stop-color="#0d2a44"/></linearGradient></defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <g transform="translate(90 200) scale(3.2)">
+    <rect width="64" height="64" rx="15" fill="#ffffff" opacity=".12"/>
+    <rect x="13" y="14" width="38" height="9" rx="2.5" fill="#fff"/>
+    <rect x="27" y="23" width="10" height="27" rx="2.5" fill="#fff" opacity=".92"/>
+    <rect x="16" y="26" width="4" height="20" rx="2" fill="#fff" opacity=".45"/>
+    <rect x="44" y="26" width="4" height="20" rx="2" fill="#fff" opacity=".45"/>
+    <circle cx="32" cy="54" r="4" fill="#f59e0b"/>
+  </g>
+  <text x="400" y="300" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="92" font-weight="800">Toolroom<tspan fill="#9fd3fb">OS</tspan></text>
+  <text x="404" y="370" fill="#cfe3f3" font-family="Inter, Arial, sans-serif" font-size="34">Every toolroom job, one connected platform</text>
+</svg>
