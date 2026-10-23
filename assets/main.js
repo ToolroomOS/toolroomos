@@ -62,6 +62,41 @@
     }, 3000)
   }
 
+  // Solutions tabs: click or arrow keys, one panel visible
+  const tabs = $("[data-tabs]")
+  if (tabs) {
+    const btns = $$("[role=tab]", tabs)
+    const select = b => btns.forEach(x => {
+      const on = x === b
+      x.setAttribute("aria-selected", String(on)); x.tabIndex = on ? 0 : -1
+      $("#" + x.getAttribute("aria-controls")).hidden = !on
+    })
+    btns.forEach((b, i) => {
+      b.addEventListener("click", () => select(b))
+      b.addEventListener("keydown", e => {
+        const d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0
+        if (!d) return
+        const n = btns[(i + d + btns.length) % btns.length]; select(n); n.focus()
+      })
+    })
+  }
+
+  // Demo form: no backend on a static site, so it hands the details to the visitor's mail app
+  const form = $("#demoForm")
+  if (form) form.addEventListener("submit", e => {
+    e.preventDefault()
+    let ok = true
+    for (const el of form.querySelectorAll("[required]")) {
+      const bad = !el.value.trim() || (el.type === "email" && !/^\S+@\S+\.\S+$/.test(el.value))
+      el.setAttribute("aria-invalid", String(bad)); if (bad && ok) { el.focus(); ok = false }
+    }
+    if (!ok) { $("#demoNote").textContent = "Please fill in your name, work email and company."; return }
+    const v = Object.fromEntries(new FormData(form))
+    const body = `Name: ${v.name}\nCompany: ${v.company}\nEmail: ${v.email}\nShop type: ${v.type}\n\n${v.msg || ""}`
+    location.href = `mailto:${form.dataset.to}?subject=${encodeURIComponent("ToolroomOS demo: " + v.company)}&body=${encodeURIComponent(body)}`
+    $("#demoNote").textContent = "Your email app should open with the request ready to send."
+  })
+
   const y = $("#year")
   if (y) y.textContent = String(new Date().getFullYear())
 })()

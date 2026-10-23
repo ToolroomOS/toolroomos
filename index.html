@@ -33,10 +33,11 @@
         <span>Toolroom<b>OS</b></span>
       </a>
       <nav class="nav__links" id="navLinks" aria-label="Main">
+        <a href="#platform">Platform</a>
+        <a href="#solutions">Solutions</a>
         <a href="#flow">How it works</a>
-        <a href="#modules">Modules</a>
-        <a href="#shopfloor">Shop floor</a>
-        <a href="#why">Why ToolroomOS</a>
+        <a href="#security">Security</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact" class="btn btn--ghost nav__cta-mobile">Book a demo</a>
       </nav>
       <div class="nav__actions">
@@ -61,9 +62,10 @@
             <a class="btn btn--ghost btn--lg" href="#flow">See a job flow <span aria-hidden="true">→</span></a>
           </div>
           <ul class="hero__chips" aria-label="Highlights">
-            <li>One sign-in for every app</li>
-            <li>Multi-company</li>
-            <li>GST-ready challans</li>
+            <li>Single sign-on</li>
+            <li>Company-level data isolation</li>
+            <li>Role-based app access</li>
+            <li>GST-format challans</li>
           </ul>
         </div>
 
@@ -314,6 +316,47 @@
       </div>
     </section>
 
+    <!-- ───────────── Platform ───────────── -->
+    <section class="section platform" id="platform">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="eyebrow">The platform</p>
+          <h2>Modules on top. One shared core underneath.</h2>
+          <p class="lead">Every ToolroomOS module reads and writes the same parts, people and documents. Nothing is exported, re-typed or reconciled between departments, and each new module joins the same core.</p>
+        </div>
+
+        <div class="arch reveal" role="img" aria-label="ToolroomOS architecture: modules sit on a shared core of parts, people, documents and settings, running in the cloud with a Windows desktop app.">
+          <div class="arch__layer">
+            <span class="arch__label">Modules</span>
+            <div class="arch__apps">
+              <div class="app"><i class="ic ic--enquiry"></i>Enquiry</div>
+              <div class="app"><i class="ic ic--design"></i>Design</div>
+              <div class="app"><i class="ic ic--purchase"></i>Purchase</div>
+              <div class="app"><i class="ic ic--production"></i>Production</div>
+              <div class="app"><i class="ic ic--dispatch"></i>Dispatch</div>
+              <div class="app app--next">+ Next module</div>
+            </div>
+          </div>
+          <div class="arch__bus" aria-hidden="true"><span></span></div>
+          <div class="arch__layer arch__layer--core">
+            <span class="arch__label">ToolroomOS core</span>
+            <div class="arch__core">
+              <div class="core"><b>Parts &amp; item codes</b><small>One record per part, from STEP file to delivery</small></div>
+              <div class="core"><b>Companies, people &amp; roles</b><small>Who can see which company and which app</small></div>
+              <div class="core"><b>Masters</b><small>Vendors, machines, operations, categories, transporters</small></div>
+              <div class="core"><b>Documents &amp; numbering</b><small>Quotes, POs, challans and pickups, numbered once</small></div>
+            </div>
+          </div>
+          <div class="arch__base">
+            <span><i class="ic ic--cloud"></i>Hosted on Microsoft Azure</span>
+            <span><i class="ic ic--db"></i>Managed PostgreSQL</span>
+            <span><i class="ic ic--key"></i>Single sign-on</span>
+            <span><i class="ic ic--desktop"></i>Web + Windows desktop</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ───────────── Modules ───────────── -->
     <section class="section modules" id="modules">
       <div class="wrap">
@@ -363,6 +406,41 @@
       </div>
     </section>
 
+    <!-- ───────────── Solutions ───────────── -->
+    <section class="section solutions" id="solutions">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="eyebrow">Solutions</p>
+          <h2>Built for the way your shop actually works.</h2>
+          <p class="lead">Categories, operations, machines and vendors are yours to configure, so the same platform fits a mould shop, a press-tool room or a mouldbase line without custom code.</p>
+        </div>
+        <div class="tabs reveal" data-tabs>
+          <div class="tabs__list" role="tablist" aria-label="Shop types">
+            <button role="tab" id="t-mould" aria-controls="p-mould" aria-selected="true">Mould makers</button>
+            <button role="tab" id="t-die" aria-controls="p-die" aria-selected="false" tabindex="-1">Die &amp; press tools</button>
+            <button role="tab" id="t-base" aria-controls="p-base" aria-selected="false" tabindex="-1">Mouldbase makers</button>
+            <button role="tab" id="t-job" aria-controls="p-job" aria-selected="false" tabindex="-1">Precision job shops</button>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="p-mould" aria-labelledby="t-mould">
+            <div><h3>Every plate, pillar and insert, accounted for.</h3><p>Read the customer's assembly, size stock for each plate and round, and follow every part through milling, grinding and heat treatment until the tool is assembled.</p></div>
+            <ul class="ticks"><li>Assembly STEP files read part by part</li><li>Actual and stock sizes on a 3D box</li><li>Outside operations tracked by vendor</li><li>Plan released category by category</li></ul>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="p-die" aria-labelledby="t-die" hidden>
+            <div><h3>Punches, plates and strippers through every outside step.</h3><p>Press tools lean on heat treatment, wire cut and grinding vendors. Raise GST-format challans per vendor and see what is out, where, and since when.</p></div>
+            <ul class="ticks"><li>Job-work challans with HSN and value</li><li>Vehicle number enforced above Rs 50,000</li><li>One challan per part until it comes back</li><li>Received and completed dates per stage</li></ul>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="p-base" aria-labelledby="t-base" hidden>
+            <div><h3>Standard plate sets, quoted and bought in minutes.</h3><p>Repeat sizes and materials are where mouldbase makers win or lose margin. Keep one item-code master and turn stock sizes straight into vendor purchase orders.</p></div>
+            <ul class="ticks"><li>Item-code master with instant search</li><li>Quotes from STEP, saved as PDF</li><li>POs grouped by vendor and material</li><li>Custom weights where the vendor bills differently</li></ul>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="p-job" aria-labelledby="t-job" hidden>
+            <div><h3>Mixed jobs, one view of the floor.</h3><p>When every order is different, the plan is the product. Assign each operation to a machine or vendor and see the load building up as you go.</p></div>
+            <ul class="ticks"><li>Board and table planning views</li><li>Machine load while you assign</li><li>Each team completes its own category</li><li>Everything saves as you work</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ───────────── Shop floor highlights ───────────── -->
     <section class="section floor" id="shopfloor">
       <div class="wrap floor__in">
@@ -395,14 +473,102 @@
       </div>
     </section>
 
-    <!-- ───────────── Trust / pillars ───────────── -->
-    <section class="section pillars">
+    <!-- ───────────── Security & governance ───────────── -->
+    <section class="section security" id="security">
       <div class="wrap">
-        <div class="pgrid">
-          <div class="pillar reveal"><span class="pillar__n">1</span><h3>Sign in once</h3><p>One account opens every app you are allowed to use.</p></div>
-          <div class="pillar reveal"><span class="pillar__n">2</span><h3>Separate companies</h3><p>Run more than one company with its own data, settings and team.</p></div>
-          <div class="pillar reveal"><span class="pillar__n">3</span><h3>Nothing is lost</h3><p>Plans and reviews save as you work, with clear "All changes saved" status.</p></div>
-          <div class="pillar reveal"><span class="pillar__n">4</span><h3>Desktop and web</h3><p>Work in the browser, with desktop apps where the job needs them.</p></div>
+        <div class="section__head reveal">
+          <p class="eyebrow">Security &amp; governance</p>
+          <h2>Your drawings and prices stay yours.</h2>
+          <p class="lead">Customer models, rates and vendor terms are the most sensitive data a toolroom has. ToolroomOS is built so each company sees only its own, and each person sees only the apps they are given.</p>
+        </div>
+        <div class="sgrid">
+          <article class="scard reveal"><i class="ic ic--key"></i><h3>Single sign-on</h3><p>One secure sign-in opens every app a person is allowed to use, with password reset and invite links that expire.</p></article>
+          <article class="scard reveal"><i class="ic ic--shield"></i><h3>Company-level isolation</h3><p>Every record belongs to a company, and every request is checked against the company in the user's session, on the server.</p></article>
+          <article class="scard reveal"><i class="ic ic--users"></i><h3>Invite-only access</h3><p>Admins invite people, choose which apps they can open and see when each person last signed in.</p></article>
+          <article class="scard reveal"><i class="ic ic--lock"></i><h3>Encrypted end to end</h3><p>HTTPS everywhere, a managed database encrypted at rest, and desktop secrets stored encrypted on disk.</p></article>
+          <article class="scard reveal"><i class="ic ic--layers"></i><h3>Separate test and live systems</h3><p>Every change runs in a separate test environment against test data before it reaches your live system.</p></article>
+          <article class="scard reveal"><i class="ic ic--save"></i><h3>Nothing lost mid-plan</h3><p>Plans and reviews save as you work, with a clear "All changes saved" status and time stamp.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── Integrations ───────────── -->
+    <section class="section integ" id="integrations">
+      <div class="wrap integ__in">
+        <div class="reveal">
+          <p class="eyebrow">Works with what you have</p>
+          <h2>Starts from your files, ends in your paperwork.</h2>
+          <p class="lead">No new CAD seat, no data-entry project. ToolroomOS takes the formats your shop already uses and produces the documents your customers, vendors and auditors expect.</p>
+          <p class="integ__ask">Need it to talk to your accounting or ERP system? <a href="#contact">Tell us what you use.</a></p>
+        </div>
+        <ul class="ilist reveal">
+          <li><b>STEP / CAD assemblies</b><span>Read part by part, sized automatically</span></li>
+          <li><b>Excel</b><span>Bring in orders and BOMs, export lists</span></li>
+          <li><b>PDF documents</b><span>Quotations, POs, challans, pickup requests</span></li>
+          <li><b>GST</b><span>HSN, GSTIN, place of supply, e-way bill rule</span></li>
+          <li><b>3D in the browser</b><span>Review parts without a CAD licence</span></li>
+          <li><b>Windows desktop</b><span>Large STEP files handled on your own PC</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ───────────── Comparison ───────────── -->
+    <section class="section compare" id="compare">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="eyebrow">Why ToolroomOS</p>
+          <h2>Not another spreadsheet. Not a generic ERP.</h2>
+          <p class="lead">General ERPs are built around finished goods and inventory. A toolroom runs on one-off parts, outside operations and drawings. ToolroomOS starts there.</p>
+        </div>
+        <div class="cmp reveal" role="region" aria-label="Comparison" tabindex="0">
+          <table>
+            <thead><tr><th scope="col"></th><th scope="col">Spreadsheets &amp; chat</th><th scope="col">Generic ERP</th><th scope="col" class="cmp__us">ToolroomOS</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Reads STEP files and sizes stock</th><td class="no">No</td><td class="part">Rarely</td><td class="yes">Built in</td></tr>
+              <tr><th scope="row">Follows each part through machines and vendors</th><td class="no">By phone</td><td class="part">With customisation</td><td class="yes">Built in</td></tr>
+              <tr><th scope="row">Job-work challans in GST format</th><td class="part">Templates</td><td class="yes">Usually</td><td class="yes">Built in</td></tr>
+              <tr><th scope="row">Planned around categories and operations</th><td class="no">No</td><td class="part">With consultants</td><td class="yes">Configure yourself</td></tr>
+              <tr><th scope="row">3D review without a CAD licence</th><td class="no">No</td><td class="no">No</td><td class="yes">In the browser</td></tr>
+              <tr><th scope="row">One sign-in across departments</th><td class="no">No</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── Rollout ───────────── -->
+    <section class="section rollout" id="rollout">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="eyebrow">Getting started</p>
+          <h2>Live on a real job, not a slide deck.</h2>
+          <p class="lead">We set ToolroomOS up around one of your own jobs first, then roll it out team by team.</p>
+        </div>
+        <ol class="rsteps">
+          <li class="reveal"><span>01</span><h3>Walk a real job</h3><p>Bring a STEP file or a recent order. We run it through the platform with you.</p></li>
+          <li class="reveal"><span>02</span><h3>Set up your shop</h3><p>Company, people, categories, operations, machines, vendors and document numbering.</p></li>
+          <li class="reveal"><span>03</span><h3>Bring your masters</h3><p>Item codes, vendors and rates come in from your existing sheets.</p></li>
+          <li class="reveal"><span>04</span><h3>Go live by team</h3><p>Start with one module or all of them. Each team switches when it is ready.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ───────────── FAQ ───────────── -->
+    <section class="section faq" id="faq">
+      <div class="wrap faq__in">
+        <div class="reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2>Questions buyers ask.</h2>
+          <p class="lead">Anything else? <a class="link" href="#contact">Ask us directly.</a></p>
+        </div>
+        <div class="qa reveal">
+          <details><summary>Who is ToolroomOS for?</summary><p>Mould makers, die and press-tool makers, mouldbase manufacturers and precision job shops: any toolroom that builds one-off parts from drawings and sends work to outside vendors.</p></details>
+          <details><summary>Do we have to install anything?</summary><p>No. ToolroomOS runs in the browser. Enquiry is also available as a Windows desktop app for heavy STEP files.</p></details>
+          <details><summary>Can we start with one module?</summary><p>Yes. Each module works on its own and shares the same sign-in and data, so you can add the rest when you are ready.</p></details>
+          <details><summary>We run more than one company. Does that work?</summary><p>Yes. Each company keeps its own data, settings, numbering and team, and people who work across companies switch between them from the same account.</p></details>
+          <details><summary>Is our data kept apart from other customers?</summary><p>Yes. Every record is tied to its company, and the server checks the signed-in company on every request.</p></details>
+          <details><summary>Are delivery challans GST compliant?</summary><p>Challans follow the job-work format: consignor and consignee GSTIN, HSN, value, place of supply, and a required vehicle number above the Rs 50,000 e-way bill limit, numbered per financial year.</p></details>
+          <details><summary>How is it priced?</summary><p>By the modules and team size you need. Book a demo and we will send a quote for your shop.</p></details>
         </div>
       </div>
     </section>
@@ -410,24 +576,42 @@
     <!-- ───────────── CTA / contact ───────────── -->
     <section class="section cta" id="contact">
       <div class="wrap">
-        <div class="cta__box reveal">
+        <div class="cta__box cta__box--form reveal">
           <div>
             <h2>See your own toolroom in ToolroomOS.</h2>
             <p>Bring one real job, a STEP file or a recent order, and we'll walk it from enquiry to dispatch with you.</p>
+            <ul class="cta__list"><li>Live demo on your own part</li><li>Set-up plan for your shop</li><li>Quote for the modules you need</li></ul>
+            <a class="btn btn--outline-light" href="https://home.udayprecisionsolutions.com" data-signin>Already a customer? Sign in</a>
           </div>
-          <div class="cta__actions">
-            <a class="btn btn--light btn--lg" href="mailto:hello@toolroomos.com?subject=ToolroomOS%20demo" data-contact>Book a demo</a>
-            <a class="btn btn--outline-light btn--lg" href="https://home.udayprecisionsolutions.com" data-signin>Sign in</a>
-          </div>
+          <form class="dform" id="demoForm" data-to="hello@toolroomos.com" novalidate>
+            <label>Your name<input name="name" autocomplete="name" required /></label>
+            <label>Work email<input name="email" type="email" autocomplete="email" required /></label>
+            <label>Company<input name="company" autocomplete="organization" required /></label>
+            <label>Shop type
+              <select name="type">
+                <option>Mould maker</option><option>Die &amp; press tools</option><option>Mouldbase maker</option><option>Precision job shop</option><option>Other</option>
+              </select>
+            </label>
+            <label class="dform__wide">What would you like to see?<textarea name="msg" rows="3" placeholder="e.g. quoting from STEP files, vendor tracking, GST challans"></textarea></label>
+            <button class="btn btn--light btn--lg dform__wide" type="submit">Request a demo</button>
+            <p class="dform__note dform__wide" id="demoNote" role="status">Opens your email app with these details. Nothing is stored on this website.</p>
+          </form>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="wrap footer__in">
-      <div class="brand brand--foot"><img src="assets/logo.svg" alt="" width="28" height="28" /><span>Toolroom<b>OS</b></span></div>
-      <p>The operating system for mould, die, mouldbase and precision toolrooms.</p>
+    <div class="wrap footer__grid">
+      <div class="footer__brand">
+        <div class="brand brand--foot"><img src="assets/logo.svg" alt="" width="28" height="28" /><span>Toolroom<b>OS</b></span></div>
+        <p>The operating system for mould, die, mouldbase and precision toolrooms.</p>
+      </div>
+      <nav aria-label="Product"><h4>Product</h4><a href="#modules">Enquiry</a><a href="#modules">Design</a><a href="#modules">Purchase</a><a href="#modules">Production</a><a href="#modules">Dispatch</a></nav>
+      <nav aria-label="Platform"><h4>Platform</h4><a href="#platform">Architecture</a><a href="#security">Security</a><a href="#integrations">Integrations</a><a href="#rollout">Getting started</a></nav>
+      <nav aria-label="Company"><h4>Company</h4><a href="#contact">Book a demo</a><a href="#faq">FAQ</a><a href="https://home.udayprecisionsolutions.com" data-signin>Sign in</a></nav>
+    </div>
+    <div class="wrap footer__bar">
       <p class="footer__small">© <span id="year">2026</span> Uday Precision Solutions · Hyderabad, India</p>
     </div>
   </footer>
