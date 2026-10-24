@@ -81,20 +81,43 @@
     })
   }
 
-  // Demo form: no backend on a static site, so it hands the details to the visitor's mail app
+  // Demo form: posted to a form-mail relay (no backend on a static site); email app as fallback
   const form = $("#demoForm")
-  if (form) form.addEventListener("submit", e => {
+  if (form) form.addEventListener("submit", async e => {
     e.preventDefault()
+    const note = $("#demoNote"), btn = form.querySelector("button[type=submit]")
     let ok = true
     for (const el of form.querySelectorAll("[required]")) {
-      const bad = !el.value.trim() || (el.type === "email" && !/^\S+@\S+\.\S+$/.test(el.value))
+      const bad = !el.value.trim() || (el.type === "email" && !/^S+@S+.S+$/.test(el.value))
       el.setAttribute("aria-invalid", String(bad)); if (bad && ok) { el.focus(); ok = false }
     }
-    if (!ok) { $("#demoNote").textContent = "Please fill in your name, work email and company."; return }
+    if (!ok) { note.textContent = "Please fill in your name, work email and company."; return }
     const v = Object.fromEntries(new FormData(form))
-    const body = `Name: ${v.name}\nCompany: ${v.company}\nEmail: ${v.email}\nShop type: ${v.type}\n\n${v.msg || ""}`
-    location.href = `mailto:${form.dataset.to}?subject=${encodeURIComponent("ToolroomOS demo: " + v.company)}&body=${encodeURIComponent(body)}`
-    $("#demoNote").textContent = "Your email app should open with the request ready to send."
+    if (v._honey) return
+    btn.disabled = true; btn.textContent = "Sending…"
+    try {
+      const res = await fetch(form.dataset.endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ _subject: "ToolroomOS demo request: " + v.company, _template: "table", _replyto: v.email,
+          Name: v.name, Email: v.email, Company: v.company, "Shop type": v.type, Message: v.msg || "" }),
+      })
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok || String(data.success) === "false") throw new Error(data.message || "send failed")
+      form.reset()
+      btn.textContent = "Request sent"
+      note.textContent = "Thanks! We will be in touch shortly."
+    } catch {
+      btn.disabled = false; btn.textContent = "Request a demo"
+      const to = form.dataset.endpoint.split("/").pop()
+      const body = `Name: ${v.name}
+Company: ${v.company}
+Email: ${v.email}
+Shop type: ${v.type}
+
+${v.msg || ""}`
+      note.innerHTML = `Could not send right now. <a class="link" href="mailto:${to}?subject=${encodeURIComponent("ToolroomOS demo: " + v.company)}&body=${encodeURIComponent(body)}">Email us instead</a>.`
+    }
   })
 
   // Sign in is a placeholder until the customer portal address is final
