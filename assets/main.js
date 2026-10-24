@@ -97,6 +97,14 @@
     $("#demoNote").textContent = "Your email app should open with the request ready to send."
   })
 
+  // Sign in is a placeholder until the customer portal address is final
+  const toast = document.createElement("div"); toast.className = "toast"; toast.setAttribute("role", "status"); document.body.append(toast)
+  $$("[data-signin]").forEach(a => a.addEventListener("click", e => {
+    e.preventDefault()
+    toast.textContent = "Customer sign-in is opening soon. Book a demo to get access."
+    toast.classList.add("show"); clearTimeout(toast._t); toast._t = setTimeout(() => toast.classList.remove("show"), 3200)
+  }))
+
   const y = $("#year")
   if (y) y.textContent = String(new Date().getFullYear())
 })()

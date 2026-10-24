@@ -545,3 +545,5 @@ p { margin: 0 0 1rem; }
 }
 @media (prefers-reduced-motion: reduce) { .arch__bus span { animation: none; } }
 @media (prefers-color-scheme: dark) { .qa summary::after { color: #7cc0f0; } }
+.toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px); max-width: calc(100% - 32px); padding: 12px 18px; border-radius: 12px; background: var(--navy); color: #fff; font-size: .92rem; box-shadow: var(--shadow-lg); opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s var(--ease); z-index: 90; }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
