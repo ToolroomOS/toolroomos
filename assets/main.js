@@ -81,11 +81,11 @@
     })
   }
 
-  // Demo form: posted to a form-mail relay (no backend on a static site); email app as fallback
+  // Demo form: opens a WhatsApp chat with the details typed in, the visitor just presses send
   const form = $("#demoForm")
-  if (form) form.addEventListener("submit", async e => {
+  if (form) form.addEventListener("submit", e => {
     e.preventDefault()
-    const note = $("#demoNote"), btn = form.querySelector("button[type=submit]")
+    const note = $("#demoNote")
     let ok = true
     for (const el of form.querySelectorAll("[required]")) {
       const bad = !el.value.trim() || (el.type === "email" && !/^S+@S+.S+$/.test(el.value))
@@ -93,31 +93,18 @@
     }
     if (!ok) { note.textContent = "Please fill in your name, work email and company."; return }
     const v = Object.fromEntries(new FormData(form))
-    if (v._honey) return
-    btn.disabled = true; btn.textContent = "Sending…"
-    try {
-      const res = await fetch(form.dataset.endpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ _subject: "ToolroomOS demo request: " + v.company, _template: "table", _replyto: v.email,
-          Name: v.name, Email: v.email, Company: v.company, "Shop type": v.type, Message: v.msg || "" }),
-      })
-      const data = await res.json().catch(() => ({}))
-      if (!res.ok || String(data.success) === "false") throw new Error(data.message || "send failed")
-      form.reset()
-      btn.textContent = "Request sent"
-      note.textContent = "Thanks! We will be in touch shortly."
-    } catch {
-      btn.disabled = false; btn.textContent = "Request a demo"
-      const to = form.dataset.endpoint.split("/").pop()
-      const body = `Name: ${v.name}
+    const text = `Hi, I would like a ToolroomOS demo.
+
+Name: ${v.name}
 Company: ${v.company}
 Email: ${v.email}
-Shop type: ${v.type}
+Shop type: ${v.type}` + (v.msg ? `
 
-${v.msg || ""}`
-      note.innerHTML = `Could not send right now. <a class="link" href="mailto:${to}?subject=${encodeURIComponent("ToolroomOS demo: " + v.company)}&body=${encodeURIComponent(body)}">Email us instead</a>.`
-    }
+${v.msg}` : "")
+    const url = `https://wa.me/${form.dataset.wa}?text=${encodeURIComponent(text)}`
+    const win = window.open(url, "_blank") // "noopener" would make this return null
+    if (win) win.opener = null
+    note.innerHTML = win ? "WhatsApp is opening. Press send to reach us." : `<a class="link" href="${url}" target="_blank" rel="noopener">Open WhatsApp</a> to send your request.`
   })
 
   // Sign in is a placeholder until the customer portal address is final
