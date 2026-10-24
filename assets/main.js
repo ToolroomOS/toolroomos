@@ -88,19 +88,16 @@
     const note = $("#demoNote")
     let ok = true
     for (const el of form.querySelectorAll("[required]")) {
-      const bad = !el.value.trim() || (el.type === "email" && !/^S+@S+.S+$/.test(el.value))
+      const bad = !el.value.trim() || (el.type === "email" && !/^\S+@\S+\.\S+$/.test(el.value))
       el.setAttribute("aria-invalid", String(bad)); if (bad && ok) { el.focus(); ok = false }
     }
     if (!ok) { note.textContent = "Please fill in your name, work email and company."; return }
     const v = Object.fromEntries(new FormData(form))
-    const text = `Hi, I would like a ToolroomOS demo.
-
-Name: ${v.name}
-Company: ${v.company}
-Email: ${v.email}
-Shop type: ${v.type}` + (v.msg ? `
-
-${v.msg}` : "")
+    const text = [
+      "Hi, I would like a ToolroomOS demo.", "",
+      `Name: ${v.name}`, `Company: ${v.company}`, `Email: ${v.email}`, `Shop type: ${v.type}`,
+      ...(v.msg ? ["", v.msg] : []),
+    ].join("\n")
     const url = `https://wa.me/${form.dataset.wa}?text=${encodeURIComponent(text)}`
     const win = window.open(url, "_blank") // "noopener" would make this return null
     if (win) win.opener = null
